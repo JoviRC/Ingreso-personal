@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+const boxForm = {
+  lunes: false,
+  martes: false,
+  miercoles: false,
+  jueves: false,
+  viernes: false,
+  sabado: false,
+  domingo: false,
+};
 const initailForm = {
   id: null,
   rut: "",
@@ -8,12 +17,17 @@ const initailForm = {
   jobTitule: "",
   checkInTime: 0,
   closingHour: 0,
-  WorkDays: "",
+  WorkDays: boxForm
 };
 
-const AddUserTable = ({ createUser, updateUser, userToEdit, setUserToEdit }) => {
+const AddUserTable = ({
+  createUser,
+  updateUser,
+  userToEdit,
+  setUserToEdit,
+}) => {
   const [form, setForm] = useState(initailForm);
-
+  const [box, setBox] = useState(boxForm);
   useEffect(() => {
     if (userToEdit) {
       setForm(userToEdit);
@@ -26,7 +40,9 @@ const AddUserTable = ({ createUser, updateUser, userToEdit, setUserToEdit }) => 
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-    });
+    }); 
+    console.log(boxForm[0].value);
+    console.log(form);
   };
 
   const handleSubmit = (e) => {
@@ -38,8 +54,7 @@ const AddUserTable = ({ createUser, updateUser, userToEdit, setUserToEdit }) => 
       !form.lastName ||
       !form.jobTitule ||
       !form.checkInTime ||
-      !form.closingHour ||
-      !form.WorkDays
+      !form.closingHour
     ) {
       alert("Datos incompletos");
       return;
@@ -57,6 +72,11 @@ const AddUserTable = ({ createUser, updateUser, userToEdit, setUserToEdit }) => 
   const handleReset = () => {
     setForm(initailForm);
     setUserToEdit(null);
+  };
+
+  const handleChangeBox = (e) => {
+    setBox({ ...box, [e.target.name]: e.target.value });
+    console.log(form);
   };
 
   return (
@@ -105,13 +125,58 @@ const AddUserTable = ({ createUser, updateUser, userToEdit, setUserToEdit }) => 
           onChange={handleChange}
           value={form.closingHour}
         />
-        <input
-          type="text"
-          name="WorkDays"
-          placeholder="Dias"
-          onChange={handleChange}
-          value={form.WorkDays}
-        />
+        <div>
+          <input
+            type="checkbox"
+            name="lunes"
+            value={true}
+            onChange={handleChange}
+          />
+          Lunes
+          <input
+            type="checkbox"
+            name="WorkDays.martes"
+            value={true}
+            onChange={handleChange}
+          />
+          Martes
+          <input
+            type="checkbox"
+            name="miercoles"
+            value={true}
+            onChange={handleChange}
+          />
+          Miercoles
+          <input
+            type="checkbox"
+            name="jueves"
+            value={true}
+            onChange={handleChange}
+          />
+          Jueves
+          <input
+            type="checkbox"
+            name="viernes"
+            value={true}
+            onChange={handleChange}
+          />
+          Viernes
+          <input
+            type="checkbox"
+            name="sabado"
+            value={true}
+            onChange={handleChange}
+          />
+          Sabado
+          <input
+            type="checkbox"
+            name="domingo"
+            value={true}
+            onChange={handleChange}
+          />
+          Domingo
+        </div>
+
         <input type="submit" value="Enviar" />
         <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>

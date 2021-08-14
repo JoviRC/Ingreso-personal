@@ -48,5 +48,13 @@
       "lastName": "RC",
       "password": "123"
     }
+  ],
+  "AsistenciaUsuario": [
+    {
+      "id": 123,
+      "checkIn": "",
+      "checkOut": "",
+      "date": 0
+    }
   ]
 }

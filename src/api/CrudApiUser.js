@@ -6,12 +6,13 @@ const CrudApiUser = () => {
   const [db, setDb] = useState(null);
   const [userToEdit, setUserToEdit] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   let api = helpHttp();
   let url = "http://localhost:5000/DataPersonal";
 
   useEffect(() => {
-    // setLoading(true);
+    setLoading(true);
     helpHttp()
       .get(url)
       .then((res) => {
@@ -23,7 +24,7 @@ const CrudApiUser = () => {
           setDb(null);
           setError(res);
         }
-        // setLoading(false);
+        setLoading(false);
       });
   }, [url]);
 
@@ -100,6 +101,10 @@ const CrudApiUser = () => {
           userToEdit={userToEdit}
           setUserToEdit={setUserToEdit}
         />
+        {loading && <h3>Cargando</h3>}
+        {error && (
+          <h3>{error}</h3>
+        )}
       </article>
     </div>
   );
