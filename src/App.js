@@ -9,7 +9,6 @@ function App() {
   const [btnName,setBtnName] = useState("LogIn")
   const handleButton = () => {
     setBtnAdmin(!btnAdmin)
-    console.log(btnAdmin);
     btnAdmin === true? setBtnName("LogOut"): setBtnName("LogIn")
   } 
 

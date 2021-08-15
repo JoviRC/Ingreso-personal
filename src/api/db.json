@@ -29,16 +29,6 @@
       "checkInTime": 800,
       "closingHour": 1730,
       "workDays": "Lunes"
-    },
-    {
-      "id": 1628889919573,
-      "rut": "111",
-      "name": "Dana",
-      "lastName": "Goya",
-      "jobTitule": "Dentista",
-      "checkInTime": "312",
-      "closingHour": "321",
-      "WorkDays": "Lunes"
     }
   ],
   "AdminUser": [
