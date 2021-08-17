@@ -19,19 +19,37 @@
       }
     },
     {
-      "id": 1629168044313,
-      "rut": "18986772-7",
-      "name": "Jovi",
-      "lastName": "Rivera",
-      "jobTitule": "Informatico",
-      "checkInTime": "09:00",
-      "closingHour": "17:30",
+      "id": 1629226197989,
+      "rut": "3333",
+      "name": "Valentina Cuevas Palma",
+      "lastName": "RC",
+      "jobTitule": "profe",
+      "checkInTime": "15:49",
+      "closingHour": "15:49",
       "workDays": {
         "lunes": false,
         "martes": true,
         "miercoles": false,
         "jueves": true,
         "viernes": false,
+        "sabado": false,
+        "domingo": false
+      }
+    },
+    {
+      "id": 1629226605836,
+      "rut": "18986772",
+      "name": "Dana Goya",
+      "lastName": "perez",
+      "jobTitule": "Dentista",
+      "checkInTime": "17:53",
+      "closingHour": "16:53",
+      "workDays": {
+        "lunes": true,
+        "martes": false,
+        "miercoles": false,
+        "jueves": false,
+        "viernes": true,
         "sabado": false,
         "domingo": false
       }
@@ -47,7 +65,7 @@
   ],
   "AsistenciaUsuario": [
     {
-      "id": 123,
+      "id": 1629168044313,
       "checkIn": "",
       "checkOut": "",
       "date": 0

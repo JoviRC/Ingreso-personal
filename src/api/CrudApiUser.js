@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import { helpHttp } from "../Helpers/helpHttp";
-import AddUserTable from "../Components/AddUser";
+import AddUser from "../Components/AddUser";
 import { AdminPage } from "../Components/AdminPage";
+import TablaUser from "../Components/TablaUser";
 
-const CrudApiUser = ({ admin }) => {
+export const CrudUserContext = createContext({});
+
+export const CrudApiUser = (props) => {
   const [db, setDb] = useState(null);
   const [userToEdit, setUserToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [dbTable, setDbTable] = useState([]);
 
   let api = helpHttp();
   let url = "http://localhost:5000/DataPersonal";
@@ -20,6 +24,7 @@ const CrudApiUser = ({ admin }) => {
         if (!res.err) {
           setDb(res);
           setError(null);
+          setDbTable(res);
         } else {
           setDb(null);
           setError(res);
@@ -92,45 +97,11 @@ const CrudApiUser = ({ admin }) => {
     }
   };
 
-  console.log(db);
-
   return (
-    <div>
-      <AdminPage admin={admin} />
-      <hr />
-      <div>
-        <table>
-          {/* <tr>
-            <th>Rut</th>
-            <th>Apellidos</th>
-            <th>Nombres</th>
-            <th>Cargo</th>
-          </tr> */}
-          {db.map((tab) => (
-            <tr>
-              <th>{tab.rut}</th>
-              <th>{tab.lastName}</th>
-              <th>{tab.name}</th>
-              <th>{tab.jobTitule}</th>
-            </tr>
-          ))}
-        </table>
-      </div>
-
-      {/* <article className="grid-1-2">
-        <AddUserTable
-          createUser={createUser}
-          updateUser={updateUser}
-          userToEdit={userToEdit}
-          setUserToEdit={setUserToEdit}
-        />
-        {loading && <h3>Cargando</h3>}
-        {error && (
-          <h3>{error}</h3>
-        )}
-      </article> */}
-    </div>
+    <CrudUserContext.Provider
+      value={{ dbTable, createUser, updateUser, userToEdit, setUserToEdit }}
+    >
+      {props.children}
+    </CrudUserContext.Provider>
   );
 };
-
-export default CrudApiUser;

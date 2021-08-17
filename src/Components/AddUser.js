@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CrudUserContext } from "../api/CrudApiUser";
 const initailForm = {
   id: null,
   rut: "",
@@ -18,14 +19,11 @@ const initailForm = {
   },
 };
 
-const AddUser = ({
-  createUser,
-  updateUser,
-  userToEdit,
-  setUserToEdit,
-}) => {
+const AddUser = () => {
   const [form, setForm] = useState(initailForm);
   const [box, setBox] = useState(false);
+  const { createUser, updateUser, userToEdit, setUserToEdit } =
+    useContext(CrudUserContext);
 
   const handleChange = (e) => {
     if (e.target.name === "workDays") {
@@ -33,7 +31,7 @@ const AddUser = ({
         ...form,
         workDays: { ...form.workDays, [e.target.value]: e.target.checked },
       });
-      setBox(true)
+      setBox(true);
     } else {
       setForm({
         ...form,

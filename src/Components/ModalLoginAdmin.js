@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-import CrudApiUser from "../api/CrudApiUser";
+import React, { useState, useEffect, useContext } from "react";
+import { CrudApiUser } from "../api/CrudApiUser";
 import { TestAdminContext } from "../api/TestAdminApi";
+import AddUser from "./AddUser";
 import { AdminPage } from "./AdminPage";
+import TablaUser from "./TablaUser";
 
 export const ModalLoginAdmin = () => {
-  const userAdmin = React.useContext(TestAdminContext);
+  const userAdmin = useContext(TestAdminContext);
   const [auth, setAuth] = useState(false);
+  const [btnAddUser, setBtnAddUser] = useState(true);
+  const [admin, setAdmin] = useState({});
+  const [btnAdd, setBtnAdd] = useState("Agregar");
 
   const handleChange = (e) => {
     userAdmin.map((admin) =>
@@ -13,8 +18,24 @@ export const ModalLoginAdmin = () => {
     );
   };
 
+  const handleButton = () => {
+    setBtnAddUser(!btnAddUser);
+    btnAdd !== true ? setBtnAdd("Cerrar") : setBtnAdd("Agregar");
+  };
+  
   if (auth) {
-    return <CrudApiUser admin={userAdmin} />;
+    return (
+      <>
+        <AdminPage admin={userAdmin} />
+        <CrudApiUser>
+          <button type="button" className="btnuser" onClick={handleButton}>
+            {btnAdd}
+          </button>
+          {btnAddUser === false ? <AddUser /> : <TablaUser />}
+          
+        </CrudApiUser>
+      </>
+    );
   } else {
     return (
       <form>

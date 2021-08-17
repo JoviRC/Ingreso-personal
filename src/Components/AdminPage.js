@@ -7,6 +7,7 @@ export const AdminPage = ({admin}) => {
         <h1>Bienvenido {admin.map(a=> a.name)}</h1>
         <hr/>
         
+        
         </>
     )
 }
