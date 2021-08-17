@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import { TestAdminApi } from "./api/TestAdminApi";
 import "./App.css";
-import { IngresoDiario } from "./Components/IngresoDiario";
 import { ModalLoginAdmin } from "./Components/ModalLoginAdmin";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <button type="button" className="btnAdmin" onClick={handleButton}>{btnName}</button>
         {btnAdmin === false ? <ModalLoginAdmin />: ""}
       </TestAdminApi>
-
     </div>
   );
 }

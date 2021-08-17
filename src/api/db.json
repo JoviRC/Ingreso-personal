@@ -1,34 +1,40 @@
 {
   "DataPersonal": [
     {
-      "id": 0,
-      "rut": "123",
+      "id": 1629168044313,
+      "rut": "18986772-7",
       "name": "Johan Alejandro",
       "lastName": "Rivera Casanga",
       "jobTitule": "Informatico",
-      "checkInTime": 800,
-      "closingHour": 1730,
-      "WorkDays": "Lunes"
+      "checkInTime": "09:00",
+      "closingHour": "17:30",
+      "workDays": {
+        "lunes": false,
+        "martes": true,
+        "miercoles": false,
+        "jueves": true,
+        "viernes": false,
+        "sabado": false,
+        "domingo": false
+      }
     },
     {
-      "id": 1,
-      "rut": "321",
-      "name": "Juenito Gonzalo",
-      "lastName": "Perex Dias",
-      "jobTitule": "Profesor de Matematicas",
-      "checkInTime": 800,
-      "closingHour": 1300,
-      "workDays": "Lunes"
-    },
-    {
-      "id": 2,
-      "rut": "987",
-      "name": "Miguel",
-      "lastName": "Rivera Casanga",
+      "id": 1629168044313,
+      "rut": "18986772-7",
+      "name": "Jovi",
+      "lastName": "Rivera",
       "jobTitule": "Informatico",
-      "checkInTime": 800,
-      "closingHour": 1730,
-      "workDays": "Lunes"
+      "checkInTime": "09:00",
+      "closingHour": "17:30",
+      "workDays": {
+        "lunes": false,
+        "martes": true,
+        "miercoles": false,
+        "jueves": true,
+        "viernes": false,
+        "sabado": false,
+        "domingo": false
+      }
     }
   ],
   "AdminUser": [

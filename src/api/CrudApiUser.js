@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../Helpers/helpHttp";
-import AddUserTable from "../Components/AddUserTable";
+import AddUserTable from "../Components/AddUser";
+import { AdminPage } from "../Components/AdminPage";
 
-const CrudApiUser = () => {
+const CrudApiUser = ({ admin }) => {
   const [db, setDb] = useState(null);
   const [userToEdit, setUserToEdit] = useState(null);
   const [error, setError] = useState(null);
@@ -91,9 +92,32 @@ const CrudApiUser = () => {
     }
   };
 
+  console.log(db);
+
   return (
     <div>
-      <article className="grid-1-2">
+      <AdminPage admin={admin} />
+      <hr />
+      <div>
+        <table>
+          {/* <tr>
+            <th>Rut</th>
+            <th>Apellidos</th>
+            <th>Nombres</th>
+            <th>Cargo</th>
+          </tr> */}
+          {db.map((tab) => (
+            <tr>
+              <th>{tab.rut}</th>
+              <th>{tab.lastName}</th>
+              <th>{tab.name}</th>
+              <th>{tab.jobTitule}</th>
+            </tr>
+          ))}
+        </table>
+      </div>
+
+      {/* <article className="grid-1-2">
         <AddUserTable
           createUser={createUser}
           updateUser={updateUser}
@@ -104,7 +128,7 @@ const CrudApiUser = () => {
         {error && (
           <h3>{error}</h3>
         )}
-      </article>
+      </article> */}
     </div>
   );
 };
