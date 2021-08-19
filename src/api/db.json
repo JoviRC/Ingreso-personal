@@ -1,55 +1,19 @@
 {
   "DataPersonal": [
     {
-      "id": 1629168044313,
-      "rut": "18986772-7",
-      "name": "Johan Alejandro",
-      "lastName": "Rivera Casanga",
-      "jobTitule": "Informatico",
-      "checkInTime": "09:00",
-      "closingHour": "17:30",
-      "workDays": {
-        "lunes": false,
-        "martes": true,
-        "miercoles": false,
-        "jueves": true,
-        "viernes": false,
-        "sabado": false,
-        "domingo": false
-      }
-    },
-    {
-      "id": 1629226197989,
-      "rut": "3333",
-      "name": "Valentina Cuevas Palma",
-      "lastName": "RC",
+      "id": 1629332234795,
+      "rut": "111",
+      "name": "Dana",
+      "lastName": "Goya",
       "jobTitule": "profe",
-      "checkInTime": "15:49",
-      "closingHour": "15:49",
-      "workDays": {
-        "lunes": false,
-        "martes": true,
-        "miercoles": false,
-        "jueves": true,
-        "viernes": false,
-        "sabado": false,
-        "domingo": false
-      }
-    },
-    {
-      "id": 1629226605836,
-      "rut": "18986772",
-      "name": "Dana Goya",
-      "lastName": "perez",
-      "jobTitule": "Dentista",
-      "checkInTime": "17:53",
-      "closingHour": "16:53",
+      "checkInTime": "02:23",
+      "closingHour": "23:22",
       "workDays": {
         "lunes": true,
         "martes": false,
-        "miercoles": false,
+        "miercoles": true,
         "jueves": false,
-        "viernes": true,
+        "viernes": false,
         "sabado": false,
         "domingo": false
       }

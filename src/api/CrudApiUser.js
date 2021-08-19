@@ -99,7 +99,7 @@ export const CrudApiUser = (props) => {
 
   return (
     <CrudUserContext.Provider
-      value={{ dbTable, createUser, updateUser, userToEdit, setUserToEdit }}
+      value={{ dbTable, createUser, updateUser, userToEdit, setUserToEdit,deleteUser }}
     >
       {props.children}
     </CrudUserContext.Provider>
