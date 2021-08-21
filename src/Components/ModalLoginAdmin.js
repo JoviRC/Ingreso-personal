@@ -22,6 +22,8 @@ export const ModalLoginAdmin = () => {
     btnAddUser === true ? setBtnAdd("Cerrar") : setBtnAdd("Agregar");
   };
 
+
+
   if (auth) {
     return (
       <>

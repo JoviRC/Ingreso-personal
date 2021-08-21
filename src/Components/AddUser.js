@@ -33,14 +33,26 @@ const AddUser = () => {
       });
       setBox(true);
     } else {
-      setForm({
-        ...form,
-        [e.target.name]: e.target.value,
-      });
+      if (e.target.name === "rut") {
+        let rut = e.target.value;
+        rut = rut
+          .replace(/[.-]/g, "")
+          .replace(/^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, "$1.$2.$3-$4");
+        setForm({
+          ...form,
+          [e.target.name]: rut,
+        });
+      } else {
+        setForm({
+          ...form,
+          [e.target.name]: e.target.value,
+        });
+      }
     }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    rutValido(form.rut);
     if (
       !form.rut ||
       !form.name ||
@@ -66,6 +78,17 @@ const AddUser = () => {
     setBox(false);
   };
 
+  const rutValido = (rut) => {
+    let T = rut.slice(-1);
+    T = parseInt(T);
+    const M = 0,
+      S = 1;
+    for (; T; T = Math.floor(T / 10)) S = (S + (T % 10) * (9 - (M++ % 6))) % 11;
+    //return S?S-1:'k';
+
+    alert(S ? S - 1 : "k");
+  };
+
   return (
     <div active="active">
       <h3>{userToEdit ? "Editar" : "Agregar"}</h3>
@@ -75,6 +98,8 @@ const AddUser = () => {
             type="text"
             name="rut"
             placeholder="Rut"
+            minLength="8"
+            maxLength="12"
             onChange={handleChange}
             value={form.rut}
           />

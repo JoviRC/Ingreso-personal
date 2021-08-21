@@ -1,19 +1,19 @@
 {
   "DataPersonal": [
     {
-      "id": 1629332234795,
-      "rut": "111",
-      "name": "Dana",
-      "lastName": "Goya",
-      "jobTitule": "profe",
-      "checkInTime": "02:23",
-      "closingHour": "23:22",
+      "id": 1629580921526,
+      "rut": "18.986.772-7",
+      "name": "Johan Alejandro",
+      "lastName": "Rivera Casanga",
+      "jobTitule": "Informatico",
+      "checkInTime": "08:30",
+      "closingHour": "16:30",
       "workDays": {
         "lunes": true,
-        "martes": false,
+        "martes": true,
         "miercoles": true,
-        "jueves": false,
-        "viernes": false,
+        "jueves": true,
+        "viernes": true,
         "sabado": false,
         "domingo": false
       }

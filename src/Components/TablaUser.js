@@ -8,6 +8,11 @@ const TablaUser = () => {
   useEffect(() => {
     setDb(dbTable);
   }, [dbTable]);
+
+  const sintaxRut = (rut) => {
+  return rut.replace(/[.-]/g, '').replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1.$2.$3-$4')
+  };
+
   return (
     <div>
       <table
@@ -30,7 +35,7 @@ const TablaUser = () => {
         <tbody>
           {db.map((tab, index) => (
             <tr key={index}>
-              <td>{tab.rut}</td>
+              <td>{sintaxRut(tab.rut)}</td>
               <td>{tab.lastName}</td>
               <td>{tab.name}</td>
               <td>{tab.jobTitule}</td>
@@ -49,9 +54,7 @@ const TablaUser = () => {
               </td>
               <td>
                 <button>Editar</button>
-                <button onClick={() => deleteUser(tab.id)}>
-                  Eliminar
-                </button>
+                <button onClick={() => deleteUser(tab.id)}>Eliminar</button>
               </td>
             </tr>
           ))}

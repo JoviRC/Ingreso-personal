@@ -1,8 +1,5 @@
 import React, { useEffect, useState, createContext } from "react";
 import { helpHttp } from "../Helpers/helpHttp";
-import AddUser from "../Components/AddUser";
-import { AdminPage } from "../Components/AdminPage";
-import TablaUser from "../Components/TablaUser";
 
 export const CrudUserContext = createContext({});
 
