@@ -52,7 +52,7 @@ const AddUser = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    rutValido(form.rut);
+
     if (
       !form.rut ||
       !form.name ||
@@ -76,17 +76,6 @@ const AddUser = () => {
     setForm(initailForm);
     setUserToEdit(null);
     setBox(false);
-  };
-
-  const rutValido = (rut) => {
-    let T = rut.slice(-1);
-    T = parseInt(T);
-    const M = 0,
-      S = 1;
-    for (; T; T = Math.floor(T / 10)) S = (S + (T % 10) * (9 - (M++ % 6))) % 11;
-    //return S?S-1:'k';
-
-    alert(S ? S - 1 : "k");
   };
 
   return (

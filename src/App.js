@@ -9,7 +9,8 @@ function App() {
   const handleButton = () => {
     setBtnAdmin(!btnAdmin)
     btnAdmin === true? setBtnName("LogOut"): setBtnName("LogIn")
-  } 
+    
+  }
 
   return (
     <div className="App">

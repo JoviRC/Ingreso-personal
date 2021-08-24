@@ -17,6 +17,24 @@
         "sabado": false,
         "domingo": false
       }
+    },
+    {
+      "id": 1629622854067,
+      "rut": "3333",
+      "name": "Addventure",
+      "lastName": "perez",
+      "jobTitule": "Ui",
+      "checkInTime": "11:00",
+      "closingHour": "11:00",
+      "workDays": {
+        "lunes": false,
+        "martes": true,
+        "miercoles": false,
+        "jueves": false,
+        "viernes": false,
+        "sabado": false,
+        "domingo": false
+      }
     }
   ],
   "AdminUser": [

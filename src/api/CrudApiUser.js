@@ -43,6 +43,7 @@ export const CrudApiUser = (props) => {
       //console.log(res);
       if (!res.err) {
         setDb([...db, res]);
+        setDbTable([...db, res]);
       } else {
         setError(res);
       }
@@ -63,6 +64,7 @@ export const CrudApiUser = (props) => {
       if (!res.err) {
         let newData = db.map((el) => (el.id === data.id ? data : el));
         setDb(newData);
+        setDbTable(newData)
       } else {
         setError(res);
       }
@@ -85,6 +87,7 @@ export const CrudApiUser = (props) => {
         if (!res.err) {
           let newData = db.filter((el) => el.id !== id);
           setDb(newData);
+          setDbTable(newData)
         } else {
           setError(res);
         }
@@ -96,7 +99,15 @@ export const CrudApiUser = (props) => {
 
   return (
     <CrudUserContext.Provider
-      value={{ dbTable, createUser, updateUser, userToEdit, setUserToEdit,deleteUser }}
+      value={{
+        dbTable,
+        setDbTable,
+        createUser,
+        updateUser,
+        userToEdit,
+        setUserToEdit,
+        deleteUser,
+      }}
     >
       {props.children}
     </CrudUserContext.Provider>

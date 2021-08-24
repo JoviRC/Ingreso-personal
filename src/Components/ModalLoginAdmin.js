@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { CrudApiUser, CrudUserContext } from "../api/CrudApiUser";
+import { CrudApiUser } from "../api/CrudApiUser";
 import { TestAdminContext } from "../api/TestAdminApi";
 import AddUser from "./AddUser";
 import { AdminPage } from "./AdminPage";
@@ -22,18 +22,12 @@ export const ModalLoginAdmin = () => {
     btnAddUser === true ? setBtnAdd("Cerrar") : setBtnAdd("Agregar");
   };
 
-
-
   if (auth) {
     return (
       <>
         <AdminPage admin={userAdmin} />
         <CrudApiUser>
-          <button type="button" onClick={handleButton}>
-            {btnAdd}
-          </button>
-          {btnAddUser === false ? <AddUser /> : <TablaUser />}
-          
+          <TablaUser />
         </CrudApiUser>
       </>
     );
